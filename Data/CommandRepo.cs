@@ -29,9 +29,9 @@ namespace SixMinAPI.Data
             _context.Commands.Remove(cmd);
         }
 
-        public async Task<IEnumerable<Command>> GetAllCommands(int id)
+        public async Task<IEnumerable<Command>> GetAllCommands()
         {
-            return await _context.Commands!.ToListAsync();
+            return await _context.Commands.ToListAsync();
         }
 
         public async Task<Command?> GetCommandById(int id)
@@ -39,7 +39,7 @@ namespace SixMinAPI.Data
             return await _context.Commands.FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task SaveChanges()
+        public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }

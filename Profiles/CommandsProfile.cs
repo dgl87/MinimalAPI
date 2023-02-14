@@ -6,7 +6,7 @@ namespace SixMinAPI.Profiles
 {
     public class CommandsProfile : Profile
     {
-        public CommandsProfile(Parameters)
+        public CommandsProfile()
         {
             // Source -> Target
             CreateMap<Command, CommandReadDto>();
